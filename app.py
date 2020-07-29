@@ -28,6 +28,7 @@ def random_action(channel, action=None, **kwargs):
         if sides is None or isinstance(sides, int) is False:
             message = random_bot.roll_die()
         else:
+            print(f"We got here. Sides: {sides}")
             message = random_bot.roll_die(sides)
     elif action == "card":
         message = random_bot.random_card()
@@ -73,6 +74,7 @@ def message(payload):
     elif "roll a d" in text.lower():
         droll = text.split("roll a")[1].strip().split()[0]
         if isinstance(droll[1:], int) is True:
+            print("got here")
             return random_action(channel_id, action="die", sides=int(droll[1:]))
 
 if __name__ == "__main__":

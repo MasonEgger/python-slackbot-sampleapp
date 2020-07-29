@@ -72,6 +72,11 @@ def message(payload):
         # Execute the random action as a coin flip
         return random_action(channel_id, action="card")
     elif "roll a d" in text.lower():
+        # Since the activation phrase was met, get the channel ID that the event
+        # was executed on
+        channel_id = event.get("channel")
+
+        # Strip out the number from the command
         droll = text.split("roll a")[1].strip().split()[0]
         try:
             int(droll[1:])

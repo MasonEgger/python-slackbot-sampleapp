@@ -25,7 +25,7 @@ def random_action(channel, action=None, **kwargs):
         message = random_bot.flip_coin()
     elif action == "die":
         sides = kwargs.get("sides", None)
-        if sides is None and isinstance(sides, int):
+        if sides is None or isinstance(sides, int) is False:
             message = random_bot.roll_die()
         else:
             message = random_bot.roll_die(sides)

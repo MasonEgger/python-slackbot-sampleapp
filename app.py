@@ -73,8 +73,11 @@ def message(payload):
         return random_action(channel_id, action="card")
     elif "roll a d" in text.lower():
         droll = text.split("roll a")[1].strip().split()[0]
-        if isinstance(droll[1:], int) is True:
-            print("got here")
+        try:
+            int(droll[1:])
+        except ValueError:
+            pass
+        else:
             return random_action(channel_id, action="die", sides=int(droll[1:]))
 
 if __name__ == "__main__":

@@ -1,6 +1,26 @@
-# Getting Started #
+# RandomBot
 
-These steps will get this sample application running for you using DigitalOcean.
+This repository is a sample Slackbot implemented in Python intended to be run
+on DigitalOcean's App Platform. This slackbot listens to messages in channels
+it is installed in an performs coin flips, dice rolls, or picking random cards
+based on what it hears.
+
+Functionality: 
+* "flip a coin" - Will flip a coin
+* "roll a die" - Will roll a traditional six sided die
+* "roll a dX" - Will roll a X sided die. ex: roll a d20
+* "pick a card" - Will pick a card from a standard deck of 52 cards.
+
+To setup this slackbot and test it, you can use this tutorial on 
+[Building a Slackbot in Python on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-build-a-slackbot-in-python-on-ubuntu-20-04). You won't be able to follow 
+this tutorial word for word when it comes to deployment. But Setps 1, 4, and 5 
+will walk you through how to setup and test your slackbot. The parts of the 
+tutorial that deal with code have already been done and the code is stored
+in this repository.
+
+
+These following steps will get this sample application running for you using
+DigitalOcean.
 
 **Note: Following these steps will result in charges for the use of DigitalOcean services**
 
@@ -31,8 +51,7 @@ After forking the repo, you should now be viewing this README in your own github
 As long as you left the default Autodeploy option enabled when you first launched this app, you can now make code changes and see them automatically reflected in your live application. During these automatic deployments, your application will never pause or stop serving request because the App Platform offers zero-downtime deployments.
 
 Here's an example code change you can make for this app:
-1. Edit [server.py](server.py)
-1. Change `Hello!` into another greeting.
+1. Edit the necessary Python files to make this slackbot fit your needs.
 1. Commit the change to master. Normally it's a better practice to create a new branch for your change and then merge that branch to master after review, but for this demo you can commit to master directly.
 1. Visit https://cloud.digitalocean.com/apps and navigate to your sample-python app.
 1. You should see a "Building..." progress indicator, just like above.
